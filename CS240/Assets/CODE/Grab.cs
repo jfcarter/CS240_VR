@@ -46,12 +46,11 @@ public class Grab : MonoBehaviour {
         if(check)
         {
             //Need to figure out which kyle to move
-            GameObject use = GameObject.FindGameObjectWithTag("Robot_Kyle_Red");
 
             Vector3 direction;
-            direction = path[currentPoint].position - use.transform.position;
+            direction = path[currentPoint].position - kyleRed.transform.position;
 
-            use.transform.position += direction * Time.deltaTime * speed;
+            kyleRed.transform.position += direction * Time.deltaTime * speed;
 
             if (direction.magnitude <= reachDist)
             {
@@ -59,7 +58,7 @@ public class Grab : MonoBehaviour {
                     currentPoint++;
             }
 
-            if (use.transform.position == GameObject.FindGameObjectWithTag("Destination2").transform.position)
+            if (kyleRed.transform.position == GameObject.FindGameObjectWithTag("Destination2").transform.position)
             {
                 check = false;
             }
